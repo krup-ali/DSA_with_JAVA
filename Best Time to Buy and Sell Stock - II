@@ -1,0 +1,17 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int buyprize = Integer.MAX_VALUE;
+        int maxprofit =0;
+        for(int i =0; i<prices.length ; i++){
+            if(buyprize < prices[i])//is buyprize lessthan prisec[i]?
+            {
+                int profit = prices[i]-buyprize;         //this part calculate for selling profit 
+                maxprofit = Math.max(maxprofit, profit);   //compare current profit with previous profits to get maximum profit 
+            }else{              // buyprice is greaterthan prices[i].
+                buyprize = prices[i];
+            }
+        }
+        return maxprofit;
+
+    }
+}
